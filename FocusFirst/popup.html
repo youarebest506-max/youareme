@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusFirst Popup</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    body { width: 320px; }
+    .status-done { color: var(--success); }
+    .status-not-done { color: var(--warning); }
+  </style>
+</head>
+<body>
+  <div class="text-center">
+    <h2>🎯 FocusFirst</h2>
+  </div>
+
+  <div id="setup-section" class="card">
+    <p>What will you work on today?</p>
+    <input type="text" id="goal-input" placeholder="e.g. Finish Python project">
+    <button id="btn-set-goal" class="btn-primary" style="width: 100%;">Set Goal</button>
+  </div>
+
+  <div id="status-section" class="card" style="display: none;">
+    <p class="text-muted">Current goal:</p>
+    <p id="current-goal-text" style="font-weight: bold; margin-bottom: 8px;"></p>
+    <p>Status: <span id="current-goal-status"></span></p>
+    <button id="btn-clear-goal" class="btn-ghost" style="width: 100%; margin-top: 8px;">Clear Goal</button>
+  </div>
+
+  <div class="card flex justify-between items-center">
+    <div>
+      🪙 <span id="points-display" class="text-gold">0</span> pts
+    </div>
+    <div>
+      🔥 <span id="streak-display">0</span> streak
+    </div>
+  </div>
+
+  <button id="btn-dashboard" class="btn-neutral" style="width: 100%;">Open Dashboard</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
