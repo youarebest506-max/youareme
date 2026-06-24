@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusFirst - Focus Needed</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+    .icon-large {
+      font-size: 64px;
+      margin-bottom: 16px;
+      color: var(--warning);
+    }
+    #lock-section, #choice-section, #social-picker-section {
+      display: none;
+    }
+    .social-btn {
+      margin: 4px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Phase 1: Lock Screen -->
+    <div id="lock-section" class="fade-in">
+      <div class="icon-large">🔒</div>
+      <h2>Finish your work before you scroll.</h2>
+
+      <div class="card">
+        <p class="text-muted">Your goal today:</p>
+        <h3 id="display-goal-text">No goal set.</h3>
+      </div>
+
+      <button id="btn-mark-done" class="btn-success" style="width: 100%; margin-bottom: 16px; font-size: 16px; padding: 14px;">
+        ✅ Mark Work Done
+      </button>
+
+      <div class="text-muted">
+        🪙 <span id="display-points" class="text-gold">0</span> points &nbsp;&nbsp;|&nbsp;&nbsp;
+        🔥 <span id="display-streak">0</span> day streak
+      </div>
+    </div>
+
+    <!-- Phase 2: Choice Fork -->
+    <div id="choice-section" class="fade-in">
+      <div style="font-size: 48px; margin-bottom: 16px;">🎉</div>
+      <h2>Work done! Nice.</h2>
+      <p class="text-muted" style="margin-bottom: 24px;">What do you want to do now?</p>
+
+      <div class="flex justify-between gap-4">
+        <button id="btn-work-more" class="btn-success" style="flex: 1; padding: 20px;">
+          🟢 Work More<br>
+          <span style="font-size: 12px; font-weight: normal; opacity: 0.8;">+10 points</span>
+        </button>
+        <button id="btn-view-social" class="btn-neutral" style="flex: 1; padding: 20px;">
+          🔵 View Social Media<br>
+          <span style="font-size: 12px; font-weight: normal; opacity: 0.8;">0 points</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Phase 3: Social Media Picker -->
+    <div id="social-picker-section" class="fade-in">
+      <h2>Pick what to open</h2>
+      <p class="text-muted">You have 15 minutes before FocusFirst locks again.</p>
+
+      <div id="social-buttons" style="margin-top: 24px;">
+        <!-- Buttons injected by JS -->
+      </div>
+    </div>
+
+  </div>
+
+  <script src="blocked.js"></script>
+</body>
+</html>
